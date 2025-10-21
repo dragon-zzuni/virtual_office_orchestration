@@ -1,0 +1,97 @@
+# This project was generated with 0.3.25 using template: https://github.com/beeware/briefcase-template @ v0.3.25
+[tool.briefcase]
+project_name = "virtualOffice"
+bundle = "com.example"
+version = "0.0.1"
+url = "https://example.com/virtualoffice"
+license.file = "LICENSE"
+author = "Nemit Yu"
+author_email = "aspalt8@gmail.com"
+
+[tool.briefcase.app.virtualoffice]
+formal_name = "virtualOffice"
+description = "Virtual Office Simulator with GenAI"
+long_description = """More details about the app should go here.
+"""
+sources = [
+    "src/virtualoffice",
+]
+test_sources = [
+    "tests",
+]
+
+requires = [
+    "fastapi~=0.117",
+    "uvicorn~=0.36",
+    "email-validator~=2.3",
+    "httpx~=0.28",
+    "openai",
+    "python-dotenv",
+]
+test_requires = [
+    "pytest",
+]
+
+[tool.briefcase.app.virtualoffice.macOS]
+universal_build = true
+requires = [
+]
+
+[tool.briefcase.app.virtualoffice.linux]
+requires = [
+]
+
+[tool.briefcase.app.virtualoffice.linux.system.debian]
+system_requires = [
+]
+
+system_runtime_requires = [
+]
+
+[tool.briefcase.app.virtualoffice.linux.system.rhel]
+system_requires = [
+]
+
+system_runtime_requires = [
+]
+
+[tool.briefcase.app.virtualoffice.linux.system.suse]
+system_requires = [
+]
+
+system_runtime_requires = [
+]
+
+[tool.briefcase.app.virtualoffice.linux.system.arch]
+system_requires = [
+]
+
+system_runtime_requires = [
+]
+
+[tool.briefcase.app.virtualoffice.linux.appimage]
+manylinux = "manylinux_2_28"
+
+system_requires = [
+# ?? FIXME
+]
+
+linuxdeploy_plugins = [
+]
+
+[tool.briefcase.app.virtualoffice.linux.flatpak]
+
+[tool.briefcase.app.virtualoffice.windows]
+requires = [
+]
+
+# Mobile deployments
+[tool.briefcase.app.virtualoffice.iOS]
+supported = false
+
+[tool.briefcase.app.virtualoffice.android]
+supported = false
+
+# Web deployments
+[tool.briefcase.app.virtualoffice.web]
+supported = false
