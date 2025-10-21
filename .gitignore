@@ -105,4 +105,4 @@ credentials.json
 *.parquet
 
 # Kiro IDE
-.kiro/cache/
+.kiro/
