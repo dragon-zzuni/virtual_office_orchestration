@@ -39,6 +39,62 @@
 ### 사전 요구사항
 - Python 3.10+ (VirtualOffice는 3.11+ 권장)
 - OpenAI API Key 또는 Azure OpenAI 설정
+- Git
+
+### 0. 저장소 클론 (Git Submodules)
+
+이 프로젝트는 **Git Submodules**를 사용하여 `virtualoffice`와 `offline_agent`를 별도의 저장소로 관리합니다.
+
+#### 처음 클론할 때
+
+```bash
+# 서브모듈 포함하여 클론
+git clone --recurse-submodules https://github.com/[your-username]/virtual_office_orchestration.git
+cd virtual_office_orchestration
+```
+
+#### 이미 클론한 경우 (서브모듈 초기화)
+
+```bash
+# 서브모듈 초기화 및 업데이트
+git submodule update --init --recursive
+```
+
+#### 서브모듈을 최신 커밋으로 업데이트
+
+```bash
+# 모든 서브모듈을 원격 저장소의 최신 커밋으로 업데이트
+git submodule update --remote
+
+# 또는 개별 서브모듈 업데이트
+cd virtualoffice
+git pull origin main
+cd ..
+
+cd offline_agent
+git pull origin main
+cd ..
+```
+
+#### 서브모듈에서 작업하기
+
+서브모듈 내부에서 코드를 수정한 경우:
+
+```bash
+# 서브모듈 디렉토리로 이동
+cd virtualoffice  # 또는 offline_agent
+
+# 일반적인 git 작업 수행
+git add .
+git commit -m "Your commit message"
+git push origin main
+
+# 부모 저장소로 돌아가서 서브모듈 참조 업데이트
+cd ..
+git add virtualoffice  # 또는 offline_agent
+git commit -m "Update submodule reference"
+git push
+```
 
 ### 1. VirtualOffice 설치
 

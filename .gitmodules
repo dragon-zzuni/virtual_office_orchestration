@@ -1,0 +1,6 @@
+[submodule "virtualoffice"]
+	path = virtualoffice
+	url = https://github.com/Nemit0/virtualoffice.git
+[submodule "offline_agent"]
+	path = offline_agent
+	url = https://github.com/dragon-zzuni/offline_agent.git
