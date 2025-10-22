@@ -4,3 +4,4 @@
 [submodule "offline_agent"]
 	path = offline_agent
 	url = https://github.com/dragon-zzuni/offline_agent.git
+	branch = main
