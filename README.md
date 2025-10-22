@@ -49,7 +49,7 @@
 
 ```bash
 # 서브모듈 포함하여 클론
-git clone --recurse-submodules https://github.com/[your-username]/virtual_office_orchestration.git
+git clone --recurse-submodules https://github.com/dragon-zzuni/virtual_office_orchestration.git
 cd virtual_office_orchestration
 ```
 
