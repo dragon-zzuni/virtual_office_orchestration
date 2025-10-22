@@ -1,0 +1,12 @@
+# Virtual Office Orchestration - Combined Requirements
+# This file installs dependencies for both virtualoffice and offline_agent submodules
+
+# VirtualOffice dependencies
+-r virtualoffice/requirements.txt
+
+# Offline Agent dependencies
+-r offline_agent/requirements.txt
+
+# Note: If there are version conflicts between the two submodules,
+# pip will attempt to resolve them. You may need to manually adjust
+# versions if conflicts arise.
