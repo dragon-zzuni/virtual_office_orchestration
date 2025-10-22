@@ -96,21 +96,39 @@ git commit -m "Update submodule reference"
 git push
 ```
 
-### 1. VirtualOffice 설치
+### 1. 통합 의존성 설치 (권장)
+
+두 프로젝트의 모든 의존성을 한 번에 설치할 수 있습니다:
+
+```bash
+# 가상 환경 생성 (권장)
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+
+# 모든 의존성 설치
+pip install -r requirements.txt
+```
+
+**주의사항:**
+- 일부 패키지는 버전 충돌이 있을 수 있습니다 (예: fastapi, uvicorn)
+- pip이 자동으로 호환 가능한 버전을 선택하지만, 문제가 발생하면 개별 설치를 권장합니다
+- 개발 시에는 각 프로젝트별로 별도의 가상 환경을 사용하는 것을 권장합니다
+
+### 2. VirtualOffice 설치 (개별)
 
 ```bash
 cd virtualoffice
 pip install -r requirements.txt
 
 # .env 파일 생성 및 API 키 설정
-cp .env.example .env
+cp .env.template .env
 # OPENAI_API_KEY 설정
 
 # GUI 실행
 briefcase dev
 ```
 
-### 2. Offline Agent 설치
+### 3. Offline Agent 설치 (개별)
 
 ```bash
 cd offline_agent
