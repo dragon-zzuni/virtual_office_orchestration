@@ -125,3 +125,6 @@ credentials.json
 
 # Kiro IDE
 .kiro/
+
+# Data cache directories
+data/
