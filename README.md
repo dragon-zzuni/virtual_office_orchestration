@@ -16,6 +16,32 @@
    - TODO 자동 추출
    - 실시간 VirtualOffice 연동
 
+## 🏗️ 프로젝트 구조
+
+```
+virtual_office_orchestration/
+├── virtualoffice/          # VirtualOffice 시뮬레이터 (Git Submodule)
+│   ├── src/virtualoffice/
+│   │   ├── servers/       # Email & Chat 서버
+│   │   ├── sim_manager/   # 시뮬레이션 엔진
+│   │   └── virtualWorkers/ # AI 페르소나
+│   └── docs/              # 문서
+│
+├── offline_agent/         # Offline Agent 분석 도구 (Git Submodule)
+│   ├── src/
+│   │   ├── ui/           # PyQt6 GUI
+│   │   ├── integrations/ # VirtualOffice 연동
+│   │   └── data_sources/ # 데이터 소스 관리
+│   ├── docs/              # 문서 (가이드, 트러블슈팅 등)
+│   └── debug_tools/       # 디버깅 및 분석 스크립트 모음
+│
+├── debug_tools/           # 프로젝트 전체 레벨의 디버깅 및 테스트 스크립트
+│
+└── .kiro/                # Kiro IDE 설정
+    ├── specs/            # 프로젝트 스펙
+    └── steering/         # 개발 가이드
+```
+
 ## 🚀 주요 기능
 
 ### VirtualOffice
@@ -74,26 +100,6 @@ cd ..
 cd offline_agent
 git pull origin main
 cd ..
-```
-
-#### 서브모듈에서 작업하기
-
-서브모듈 내부에서 코드를 수정한 경우:
-
-```bash
-# 서브모듈 디렉토리로 이동
-cd virtualoffice  # 또는 offline_agent
-
-# 일반적인 git 작업 수행
-git add .
-git commit -m "Your commit message"
-git push origin main
-
-# 부모 저장소로 돌아가서 서브모듈 참조 업데이트
-cd ..
-git add virtualoffice  # 또는 offline_agent
-git commit -m "Update submodule reference"
-git push
 ```
 
 ### 1. 통합 의존성 설치 (권장)
@@ -182,31 +188,7 @@ GUI에서:
 - [VirtualOffice 연동 테스트](offline_agent/docs/VIRTUALOFFICE_TESTING.md)
 - [실시간 기능 테스트](offline_agent/docs/REALTIME_TESTING.md)
 - [설정 관리](offline_agent/docs/VIRTUALOFFICE_CONFIG.md)
-- [문제 해결](offline_agent/TROUBLESHOOTING.md)
-
-## 🏗️ 프로젝트 구조
-
-```
-virtual_office_orchestration/
-├── virtualoffice/          # VirtualOffice 시뮬레이터
-│   ├── src/virtualoffice/
-│   │   ├── servers/       # Email & Chat 서버
-│   │   ├── sim_manager/   # 시뮬레이션 엔진
-│   │   └── virtualWorkers/ # AI 페르소나
-│   └── docs/
-│
-├── offline_agent/         # Offline Agent 분석 도구
-│   ├── src/
-│   │   ├── ui/           # PyQt6 GUI
-│   │   ├── integrations/ # VirtualOffice 연동
-│   │   └── data_sources/ # 데이터 소스 관리
-│   ├── docs/
-│   └── test/
-│
-└── .kiro/                # Kiro IDE 설정
-    ├── specs/            # 프로젝트 스펙
-    └── steering/         # 개발 가이드
-```
+- [문제 해결](offline_agent/docs/TROUBLESHOOTING.md)
 
 ## 🔧 기술 스택
 
@@ -266,12 +248,10 @@ cd offline_agent
 pytest test/
 
 # 통합 테스트
-python test_virtualoffice_connection.py
+python debug_tools/test_virtualoffice_connection.py
 
 # 실시간 기능 테스트
-python run_realtime_tests.py
-python run_realtime_tests.py --full
-python run_realtime_tests.py --gui
+python debug_tools/run_realtime_tests.py
 ```
 
 ## 📝 환경 변수

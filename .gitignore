@@ -128,3 +128,6 @@ credentials.json
 
 # Data cache directories
 data/
+
+# Debug Tools
+debug_tools/
