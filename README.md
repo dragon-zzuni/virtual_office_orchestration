@@ -305,7 +305,7 @@ VDOS_SIM_URL=http://127.0.0.1:8015
 ## 📞 문의
 
 - GitHub Issues: [Issues](https://github.com/dragon-zzuni/virtual_office_orchestration/issues)
-- Email: [Your Email]
+- Email: acrombie092@gmail.com
 
 ---
 
